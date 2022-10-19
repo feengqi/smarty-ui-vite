@@ -11,11 +11,20 @@ export type IColor =
   | 'indigo'
   | 'purple'
   | 'pink';
+export type ISize = 'small' | 'medium' | 'large';
 
 export const props = {
   color: {
     type: String as PropType<IColor>,
     default: 'blue', // 设定默认颜色
+  },
+  size: {
+    type: String as PropType<ISize>,
+    default: 'medium',
+  },
+  icon: {
+    type: String,
+    default: '',
   },
 };
 
@@ -23,6 +32,23 @@ export default defineComponent({
   name: 'SButton',
   props, // 注册属性
   setup(props, { slots }) {
+    const size = {
+      small: {
+        x: '2',
+        y: '1',
+        text: 'sm',
+      },
+      medium: {
+        x: '3',
+        y: '1.5',
+        text: 'base',
+      },
+      large: {
+        x: '4',
+        y: '2',
+        text: 'lg',
+      },
+    };
     console.log('props', props);
     return () => (
       <button
@@ -38,8 +64,14 @@ export default defineComponent({
           border-none 
           cursor-pointer 
           m-1
+          py-${size[props.size].y}
       `}
       >
+        {props.icon !== '' ? (
+          <i class={`i-ic-baseline-${props.icon} p-3`} />
+        ) : (
+          ''
+        )}
         {slots.default ? slots.default() : ''}
       </button>
     );

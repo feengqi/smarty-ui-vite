@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import Unocss from "./config/unocss";
+import Unocss from './config/unocss';
 
 const rollupOptions = {
   external: ['vue', 'vue-router'],
@@ -9,15 +9,13 @@ const rollupOptions = {
     globals: {
       vue: 'Vue',
     },
+    exports: 'named',
+    assetFileNames: `assets/[name].css`,
   },
 };
 
-export default defineConfig(({
-  plugins: [
-    vue({}),
-    vueJsx({}),
-    Unocss(),
-  ],
+export default defineConfig({
+  plugins: [vue({}), vueJsx({}), Unocss()],
   build: {
     rollupOptions,
     minify: false,
@@ -28,6 +26,6 @@ export default defineConfig(({
       // 导出模块格式
       formats: ['es', 'umd', 'iife'],
     },
+    cssCodeSplit: true,
   },
-}));
-
+});
