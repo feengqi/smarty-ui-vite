@@ -22,5 +22,9 @@ const safelist = [
 export default () =>
   Unocss({
     safelist,
-    presets: [presetUno(), presetAttributify(), presetIcons()],
+    presets: [
+      presetUno(),
+      presetAttributify(),
+      presetIcons(), // 添加图标预设
+    ],
   });

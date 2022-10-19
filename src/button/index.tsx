@@ -1,7 +1,16 @@
 import { defineComponent, PropType } from 'vue';
 import 'uno.css';
 
-export type IColor = 'black' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'pink';
+export type IColor =
+  | 'black'
+  | 'gray'
+  | 'red'
+  | 'yellow'
+  | 'green'
+  | 'blue'
+  | 'indigo'
+  | 'purple'
+  | 'pink';
 
 export const props = {
   color: {
@@ -15,8 +24,9 @@ export default defineComponent({
   props, // 注册属性
   setup(props, { slots }) {
     console.log('props', props);
-    return () => <button
-      class={`
+    return () => (
+      <button
+        class={`
           py-2 
           px-4 
           font-semibold 
@@ -29,8 +39,9 @@ export default defineComponent({
           cursor-pointer 
           m-1
       `}
-    >
-      {slots.default ? slots.default() : ''}
-    </button>;
+      >
+        {slots.default ? slots.default() : ''}
+      </button>
+    );
   },
 });
