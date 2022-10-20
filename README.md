@@ -29,3 +29,18 @@
   - （2）需要将使用的图标名加入到 `safelist` 中
 
 ps: 可以在 [`iconfy`](https://icones.js.org/) 上面搜索心仪的图标
+
+## 4 文档建设：创建具备 `Demo` 示例功能的文档网站
+
+- 1.如何配置 `Vitepress` 完成文档建设 ？
+  - （1）首先需要引入 `Vitepress` 文档 （ `pnpm install` ...）
+  - （2）新建 `.docs` 文件夹，配置 `Vitepress` 的 `vite.config.ts`
+  - （3）在 `.docs` 根目录下，创建首页文档（ `index.md` ）
+  - （4）增加启动脚本
+- 2.如何在 `vitepress` 中引用 `vue` 组件？
+  - （1）通过编写一个主题 `theme` 就可以获取 vue 实例。
+  - （2）只需要在 `enhanceApp` 方法中注册组件库插件就可以了。
+- 3.什么是 `markdown` 插槽 ？
+  - 来实现同时显示 `Demo` 与代码的
+    ::: `slot name mrrkdown` 语法的一些内容
+    :::

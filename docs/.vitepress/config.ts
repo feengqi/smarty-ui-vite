@@ -36,5 +36,12 @@ const config = {
     '基于vite为基础搭建的风格脚手架,提供多种模板以便于更高效的解决业务需求！',
   lang: 'zh-CN',
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: 'logo.jpeg' }]],
+  markdown: {
+    config: (md) => {
+      // 添加DemoBlock插槽
+      const { demoBlockPlugin } = require('vitepress-theme-demoblock');
+      md.use(demoBlockPlugin);
+    },
+  },
 };
 export default config;

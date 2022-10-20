@@ -49,7 +49,7 @@ export default defineComponent({
         text: 'lg',
       },
     };
-    console.log('props', props);
+
     return () => (
       <button
         class={`
