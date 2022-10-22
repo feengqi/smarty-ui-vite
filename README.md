@@ -70,3 +70,20 @@ ps: 可以在 [`iconfy`](https://icones.js.org/) 上面搜索心仪的图标
   - （1）使用 `@vue/test-utils` 提供的 `shallowMount` 初始化组件
   - （2）以 `Button` 组件为例，在初始化组件时可以传默认插槽（按钮文字）；颜色大小等属性
   - （3）测试按钮文字，颜色大小等属性
+  
+## 7.规范化： Eslint + Prettier + Husky
+- Eslint 与 Prettier 的功能和区别 ？
+- Git commit Message 的规范是什么 ？
+- 如何设置 githooks ？
+## 8.软件包封装： 如何发布兼容多种 JS 模块标准的软件包？
+- 常用的 JS 模块化标准都有哪些 ？
+  - `IFFE` ：使用立即执行函数实现模块化 例：`(function()) {}`；
+  - `CJS` ：基于 `CommonJS` 标准的模块化；
+  - `AMD` ：使用 `Require` 编写；
+  - `CMD` ：使用 `SeaJS` 编写； 
+  - `ESM` ：`ES` 标准的模块化方案 ( `ES6` 标准提出 )； 
+  - `UMD` ：兼容 `CJS` 与 `AMD` 、 `IFFE` 规范。
+- UMD 都兼容哪些模块标准 ？
+  - `UMD` ：兼容 `CJS` 与 `AMD` 、 `IFFE` 规范。
+- `sourcemap` 的作用是什么 ？
+  - 在浏览器中断点调试你的代码，或者希望在异常监控工具中定位出错位置
