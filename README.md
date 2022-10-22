@@ -61,3 +61,12 @@ ps: 可以在 [`iconfy`](https://icones.js.org/) 上面搜索心仪的图标
     - （2.2）编写 jsdom-config.js 配置文件
     - （2.3）编写被测试函数，函数中创建一个 dom 元素
     - （2.4）编写测试用例测试 dom 元素
+
+## 6 单元测试 (二)： 搭建 Vitest 的单元测试环境
+
+- 1.如何配置 Vitest 环境？
+  - `pnpm i -D vitest@0.21.1 happy-dom@6.0.4 @vue/test-utils@2.0.2`
+- 2.如何使用 `@vue/test-utils` 完成 `Vue3` 项目的测试？
+  - （1）使用 `@vue/test-utils` 提供的 `shallowMount` 初始化组件
+  - （2）以 `Button` 组件为例，在初始化组件时可以传默认插槽（按钮文字）；颜色大小等属性
+  - （3）测试按钮文字，颜色大小等属性
