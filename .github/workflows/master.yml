@@ -5,14 +5,8 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  # Lint任务
-  Lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: lint
-        run: pnpm run lint
-  # UnitTest任务
-  UnitTest:
+  # UnitTest & Lint
+  UnitTest & Lint:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -23,5 +17,7 @@ jobs:
           version: 7.2.1
       - name: Install modules
         run: pnpm install
+      - name: lint
+        run: pnpm run lint
       - name: Run Test
         run: pnpm run test:run
